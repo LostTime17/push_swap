@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 14:32:55 by root              #+#    #+#             */
-/*   Updated: 2023/10/11 12:54:49 by root             ###   ########.fr       */
+/*   Updated: 2024/03/16 15:20:52 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 int	ft_print_str(const char *s)
 {
-	int	len;
+	int		len;
+	ssize_t	ret;
 
 	if (s == NULL)
 	{
-		write (1, "(null)", 6);
+		ret = write (1, "(null)", 6);
+		(void)ret;
 		return (6);
 	}
 	len = 0;
 	while (s[len])
 		len++;
-	write (1, s, len);
+	ret = write (1, s, len);
+	(void)ret;
 	return (len);
 }

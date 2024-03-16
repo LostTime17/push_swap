@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 21:36:59 by root              #+#    #+#             */
-/*   Updated: 2023/09/05 15:30:33 by root             ###   ########.fr       */
+/*   Updated: 2024/03/16 15:16:07 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 // Writes the string 's' followed by a newline to the given file descriptor 'fd'
 void	ft_putendl_fd(char *s, int fd)
 {
+	ssize_t	ret;
+
 	if (s)
 	{
-		write(fd, s, ft_strlen(s));
-		write(fd, "\n", 1);
+		ret = write(fd, s, ft_strlen(s));
+		(void)ret;
+		ret = write(fd, "\n", 1);
+		(void)ret;
 	}
 }

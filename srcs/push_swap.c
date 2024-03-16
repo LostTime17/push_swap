@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:10:43 by root              #+#    #+#             */
-/*   Updated: 2024/03/16 15:16:51 by root             ###   ########.fr       */
+/*   Created: 2024/03/13 14:15:47 by root              #+#    #+#             */
+/*   Updated: 2024/03/16 15:53:48 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-// Writes the integer 'n' as a string to the given file descriptor 'fd'
-void	ft_putnbr_fd(int n, int fd)
+int	main(int argc, char **argv)
 {
-	ssize_t	ret;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
-	if (n == INT_MIN)
+	a = NULL;
+	b = NULL;
+	if (argc != 2 || !argv[1][0])
+		return (1);
+	argv = ft_split(argv[1], ' ');
+	init_stack_a(&a, argv + 1);
+	if (!stack_sorted(a))
 	{
-		ret = write(fd, "-2147483648", 11);
-		(void)ret;
-		return ;
+		if (stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
+			sort_stack(&a, &b);
 	}
-	if (n < 0)
-	{
-		ret = write(fd, "-", 1);
-		(void)ret;
-		n = -n;
-	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd((n % 10) + '0', fd);
+	free_stack(&a);
+	return (0);
 }

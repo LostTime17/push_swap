@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:10:43 by root              #+#    #+#             */
-/*   Updated: 2024/03/16 15:16:51 by root             ###   ########.fr       */
+/*   Created: 2024/03/13 15:03:12 by root              #+#    #+#             */
+/*   Updated: 2024/03/16 15:54:20 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-// Writes the integer 'n' as a string to the given file descriptor 'fd'
-void	ft_putnbr_fd(int n, int fd)
+void	sort_three(t_stack_node **a)
 {
-	ssize_t	ret;
+	t_stack_node	*biggest_node;
 
-	if (n == INT_MIN)
-	{
-		ret = write(fd, "-2147483648", 11);
-		(void)ret;
-		return ;
-	}
-	if (n < 0)
-	{
-		ret = write(fd, "-", 1);
-		(void)ret;
-		n = -n;
-	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd((n % 10) + '0', fd);
+	biggest_node = find_max(*a);
+	if (biggest_node == *a)
+		ra(a, false);
+	else if ((*a)->next == biggest_node)
+		rra(a, false);
+	if ((*a)->nbr > (*a)->next->nbr)
+		sa(a, false);
 }

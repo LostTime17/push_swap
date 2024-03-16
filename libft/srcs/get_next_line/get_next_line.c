@@ -21,7 +21,7 @@ static char	*ft_read_file(int fd, char *stored_s)
 	if (!buffer)
 		return (NULL);
 	bytes_read = 1;
-	while (!ft_strchr(stored_s, '\n') && bytes_read != 0)
+	while (!ft_strchr_gnl(stored_s, '\n') && bytes_read != 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -30,7 +30,7 @@ static char	*ft_read_file(int fd, char *stored_s)
 			return (NULL);
 		}
 		buffer[bytes_read] = '\0';
-		stored_s = ft_strjoin(stored_s, buffer);
+		stored_s = ft_strjoin_gnl(stored_s, buffer);
 	}
 	free(buffer);
 	return (stored_s);
@@ -47,6 +47,6 @@ char	*get_next_line(int fd)
 	if (!stored_s)
 		return (NULL);
 	line = ft_get_line(stored_s);
-	stored_s = ft_update(stored_s);
+	stored_s = ft_update_gnl(stored_s);
 	return (line);
 }

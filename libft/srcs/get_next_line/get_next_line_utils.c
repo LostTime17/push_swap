@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 13:49:27 by root              #+#    #+#             */
-/*   Updated: 2024/02/11 14:28:05 by root             ###   ########.fr       */
+/*   Updated: 2024/03/16 15:47:03 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static size_t	ft_strlen(char *s)
 	return (len);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	if (!s)
 		return (NULL);
@@ -37,7 +37,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*new_s;
 	size_t	i;
@@ -94,7 +94,7 @@ char	*ft_get_line(char *stored_s)
 	return (s);
 }
 
-char	*ft_update(char *stored_s)
+char	*ft_update_gnl(char *stored_s)
 {
 	char	*new_s;
 	int		i;

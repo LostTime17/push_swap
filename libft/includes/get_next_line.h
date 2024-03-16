@@ -24,9 +24,9 @@
 char	*get_next_line(int fd);
 
 // get_next_line_utils.c
-char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *stored_s, char *buffer);
+char	*ft_strchr_gnl(const char *s, int c);
+char	*ft_strjoin_gnl(char *stored_s, char *buffer);
 char	*ft_get_line(char *stored_s);
-char	*ft_update(char *stored_s);
+char	*ft_update_gnl(char *stored_s);
 
 #endif

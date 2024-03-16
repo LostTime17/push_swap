@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 14:44:06 by root              #+#    #+#             */
-/*   Updated: 2023/10/11 14:16:12 by root             ###   ########.fr       */
+/*   Updated: 2024/03/16 15:19:27 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 static void	ft_putnbr(int n)
 {
+	ssize_t	ret;
+
 	if (n == INT_MIN)
 	{
-		write(1, "-2147483648", 11);
+		ret = write(1, "-2147483648", 11);
+		(void)ret;
 		return ;
 	}
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		ret = write(1, "-", 1);
+		(void)ret;
 		n = -n;
 	}
 	if (n > 9)
