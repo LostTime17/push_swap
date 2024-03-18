@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:29:30 by chchartp          #+#    #+#             */
-/*   Updated: 2024/03/16 15:53:36 by root             ###   ########.fr       */
+/*   Updated: 2024/03/18 22:19:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <../libft/includes/ft_printf.h>
-# include <../libft/includes/get_next_line.h>
 # include <../libft/includes/libft.h>
+//# include <../libft/includes/get_next_line.h>
 
 typedef struct s_stack_node
 {
@@ -39,6 +39,7 @@ void				free_errors(t_stack_node **a);
 
 //Stack initialize
 void				init_stack_a(t_stack_node **a, char **argv);
+char				**split(char *s, char c);
 
 //Nodes initialize
 void				init_nodes_a(t_stack_node *a, t_stack_node *b);

@@ -82,23 +82,25 @@ all: $(NAME)
 
 -include $(DEPS)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(DFLAGS) -c -o $@ $< $(IFLAGS)
+	@$(CC) $(CFLAGS) $(DFLAGS) -c -o $@ $< $(IFLAGS)
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-	mkdir -p $(OBJ_DIR)/$(LIBFT_DIR)
-	mkdir -p $(OBJ_DIR)/$(FT_PRINTF_DIR)
-	mkdir -p $(OBJ_DIR)/$(GNL_DIR)
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)/$(LIBFT_DIR)
+	@mkdir -p $(OBJ_DIR)/$(FT_PRINTF_DIR)
+	@mkdir -p $(OBJ_DIR)/$(GNL_DIR)
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@$(AR) $(NAME) $(OBJS)
+	@ranlib $(NAME)
+	@echo "Libft has been created!"
 
 clean:
-	$(RM) $(OBJ_DIR)
+	@$(RM) $(OBJ_DIR)
+	@echo "Libft/OBJ cleaned."
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

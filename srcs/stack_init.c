@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:35:58 by root              #+#    #+#             */
-/*   Updated: 2024/03/16 15:48:27 by root             ###   ########.fr       */
+/*   Updated: 2024/03/18 21:47:57 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,20 +101,17 @@ void	prep_for_push(t_stack_node **stack,
 	{
 		if (stack_name == 'a')
 		{
-			if (stack_name == 'a')
-			{
-				if (top_node->above_median)
-					ra(stack, false);
-				else
-					rra(stack, false);
-			}
-			else if (stack_name == 'b')
-			{
-				if (top_node->above_median)
-					rb(stack, false);
-				else
-					rrb(stack, false);
-			}
+			if (top_node->above_median)
+				ra(stack, false);
+			else
+				rra(stack, false);
+		}
+		else if (stack_name == 'b')
+		{
+			if (top_node->above_median)
+				rb(stack, false);
+			else
+				rrb(stack, false);
 		}
 	}
 }

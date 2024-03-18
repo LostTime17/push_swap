@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:16:20 by root              #+#    #+#             */
-/*   Updated: 2024/03/16 15:48:20 by root             ###   ########.fr       */
+/*   Updated: 2024/03/18 20:59:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->nbr < a->nbr
-				&& current_b->nbr > best_match_index)
+			if (current_b->nbr < a->nbr && current_b->nbr > best_match_index)
 			{
 				best_match_index = current_b->nbr;
 				target_node = current_b;
@@ -83,8 +82,8 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 
 void	set_cheapest(t_stack_node *stack)
 {
-	long			cheapest_value;
 	t_stack_node	*cheapest_node;
+	long			cheapest_value;
 
 	if (!stack)
 		return ;
