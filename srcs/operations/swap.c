@@ -6,11 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 14:44:48 by root              #+#    #+#             */
-/*   Updated: 2024/03/16 15:48:28 by root             ###   ########.fr       */
+/*   Updated: 2024/03/21 12:57:13 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	swap(t_stack_node **head)
 {

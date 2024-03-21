@@ -6,11 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 14:34:02 by root              #+#    #+#             */
-/*   Updated: 2024/03/16 15:48:24 by root             ###   ########.fr       */
+/*   Updated: 2024/03/21 12:57:10 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	rotate(t_stack_node **stack)
 {

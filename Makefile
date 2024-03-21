@@ -5,38 +5,37 @@ RM =	rm -rf
 CFLAGS =	-Wall -Wextra -Werror -I
 
 LIBFT = libft/libft.a
-SRC_DIR =	srcs
-INCLUDE_DIR =	includes
-OBJ_DIR =	objs
+SRC_DIR =	srcs/
+INCLUDE_DIR =	includes/
+OBJ_DIR =	objs/
 
-SRC_FILES =	handle_errors.c \
-						init_a_to_b.c \
-						init_b_to_a.c \
-						push_swap.c \
-						push.c \
-						rev_rotate.c \
-						rotate.c \
-						sort_stack.c \
-						sort_three.c \
-						stack_init.c \
-						stack_utils.c \
-						swap.c \
-						split.c \
+MAIN_DIR = $(SRC_DIR)main/main.c \
+					$(SRC_DIR)main/errors_handling.c \
+					$(SRC_DIR)main/stack_setup.c \
+					$(SRC_DIR)main/stack_utils.c \
+					$(SRC_DIR)main/string_split.c \
 
-SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+ALGORITHM_DIR = $(SRC_DIR)algorithm/a_node_setup.c \
+					$(SRC_DIR)algorithm/b_node_setup.c \
+					$(SRC_DIR)algorithm/sort_three.c \
+					$(SRC_DIR)algorithm/stack_sort.c \
+
+OPERATIONS_DIR = $(SRC_DIR)operations/push.c \
+					$(SRC_DIR)operations/rev_rotate.c \
+					$(SRC_DIR)operations/rotate.c \
+					$(SRC_DIR)operations/swap.c \
+
+SRCS = $(MAIN_DIR) $(ALGORITHM_DIR) $(OPERATIONS_DIR)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
-
-start:
-	@make all
-
-$(LIBFT):
-	@make -C ./libft
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
 	@$(CC) $(CFLAGS) $(INCLUDE_DIR) $(OBJS) $(LIBFT) -o $(NAME)
 	@echo "push_swap program has been created!"
+
+$(LIBFT):
+	@make -C ./libft
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
@@ -55,4 +54,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: start all clean fclean re
+.PHONY: all clean fclean re
