@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:55:41 by root              #+#    #+#             */
-/*   Updated: 2024/03/16 15:48:27 by root             ###   ########.fr       */
+/*   Updated: 2024/03/21 20:54:30 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 int	stack_len(t_stack_node *stack)
 {
-	int	count;
+	int	len;
 
 	if (!stack)
 		return (0);
-	count = 0;
+	len = 0;
 	while (stack)
 	{
 		stack = stack->next;
-		count++;
+		len++;
 	}
-	return (count);
+	return (len);
 }
 
-t_stack_node	*find_last(t_stack_node *stack)
+t_stack_node	*find_last_node(t_stack_node *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -36,7 +36,7 @@ t_stack_node	*find_last(t_stack_node *stack)
 	return (stack);
 }
 
-bool	stack_sorted(t_stack_node *stack)
+bool	is_stack_sorted(t_stack_node *stack)
 {
 	if (!stack)
 		return (1);
@@ -49,10 +49,10 @@ bool	stack_sorted(t_stack_node *stack)
 	return (true);
 }
 
-t_stack_node	*find_min(t_stack_node *stack)
+t_stack_node	*find_min_node(t_stack_node *stack)
 {
-	long			min;
 	t_stack_node	*min_node;
+	long			min;
 
 	if (!stack)
 		return (NULL);
@@ -69,10 +69,10 @@ t_stack_node	*find_min(t_stack_node *stack)
 	return (min_node);
 }
 
-t_stack_node	*find_max(t_stack_node *stack)
+t_stack_node	*find_max_node(t_stack_node *stack)
 {
-	long			max;
 	t_stack_node	*max_node;
+	long			max;
 
 	if (!stack)
 		return (NULL);

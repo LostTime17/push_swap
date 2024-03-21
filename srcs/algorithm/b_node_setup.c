@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:59:57 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 13:06:47 by root             ###   ########.fr       */
+/*   Updated: 2024/03/21 20:54:23 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	set_target_b(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_a;
-	t_stack_node	*target_node;
+	t_stack_node	*target;
 	long			best_match_index;
 
 	while (b)
@@ -27,21 +27,21 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 			if (current_a->nbr > b->nbr && current_a->nbr < best_match_index)
 			{
 				best_match_index = current_a->nbr;
-				target_node = current_a;
+				target = current_a;
 			}
 			current_a = current_a->next;
 		}
 		if (best_match_index == LONG_MAX)
-			b->target_node = find_min(a);
+			b->target = find_min_node(a);
 		else
-			b->target_node = target_node;
+			b->target = target;
 		b = b->next;
 	}
 }
 
 void	init_nodes_b(t_stack_node *a, t_stack_node *b)
 {
-	current_index(a);
-	current_index(b);
+	update_index_median(a);
+	update_index_median(b);
 	set_target_b(a, b);
 }

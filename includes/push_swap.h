@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:29:30 by chchartp          #+#    #+#             */
-/*   Updated: 2024/03/19 18:03:01 by root             ###   ########.fr       */
+/*   Updated: 2024/03/21 20:54:20 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,35 +26,35 @@ typedef struct s_stack_node
 	int					push_cost;
 	bool				above_median;
 	bool				cheapest;
-	struct s_stack_node	*target_node;
+	struct s_stack_node	*target;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }	t_stack_node;
 
 //Errors handler
-int					error_syntax(char *str_n);
-int					error_duplicate(t_stack_node *a, int n);
+int					check_syntax(char *str_n);
+int					check_duplicate(t_stack_node *a, int n);
 void				free_stack(t_stack_node **stack);
 void				free_errors(t_stack_node **a);
 
 //Stack initialize
-void				init_stack_a(t_stack_node **a, char **argv);
-char				**split(char *s, char c);
+void				init_stack(t_stack_node **a, char **argv);
+char				**split_str(char *s, char c);
 
 //Nodes initialize
 void				init_nodes_a(t_stack_node *a, t_stack_node *b);
 void				init_nodes_b(t_stack_node *a, t_stack_node *b);
-void				current_index(t_stack_node *stack);
-void				set_cheapest(t_stack_node *stack);
+void				update_index_median(t_stack_node *stack);
+void				update_cheapest(t_stack_node *stack);
 t_stack_node		*get_cheapest(t_stack_node *stack);
-void				prep_for_push(t_stack_node **s, t_stack_node *n, char c);
+void				move_to_top(t_stack_node **s, t_stack_node *n, char c);
 
 //Stack utils
 int					stack_len(t_stack_node *stack);
-t_stack_node		*find_last(t_stack_node *stack);
-bool				stack_sorted(t_stack_node *stack);
-t_stack_node		*find_min(t_stack_node *stack);
-t_stack_node		*find_max(t_stack_node *stack);
+bool				is_stack_sorted(t_stack_node *stack);
+t_stack_node		*find_last_node(t_stack_node *stack);
+t_stack_node		*find_min_node(t_stack_node *stack);
+t_stack_node		*find_max_node(t_stack_node *stack);
 
 //Commands
 void				sa(t_stack_node **a, bool print);

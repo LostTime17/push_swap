@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:15:47 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 13:08:51 by root             ###   ########.fr       */
+/*   Updated: 2024/03/21 20:54:28 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main(int argc, char **argv)
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
-		argv = split(argv[1], ' ');
-	init_stack_a(&a, argv + 1);
-	if (!stack_sorted(a))
+		argv = split_str(argv[1], ' ');
+	init_stack(&a, argv + 1);
+	if (!is_stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
 			sa(&a, false);

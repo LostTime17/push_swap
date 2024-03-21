@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 17:13:37 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 13:09:38 by root             ###   ########.fr       */
+/*   Updated: 2024/03/21 20:54:31 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static char	*get_next_word(char *s, char c)
 	return (next_word);
 }
 
-char	**split(char *s, char c)
+char	**split_str(char *s, char c)
 {
 	char	**result_array;
 	int		words_count;

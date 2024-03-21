@@ -6,13 +6,13 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:47:08 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 13:08:43 by root             ###   ########.fr       */
+/*   Updated: 2024/03/21 20:54:26 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	error_syntax(char *str_n)
+int	check_syntax(char *str_n)
 {
 	if (!(ft_isdigit(*str_n) || *str_n == '+' || *str_n == '-'))
 		return (1);
@@ -26,7 +26,7 @@ int	error_syntax(char *str_n)
 	return (0);
 }
 
-int	error_duplicate(t_stack_node *a, int n)
+int	check_duplicate(t_stack_node *a, int n)
 {
 	if (!a)
 		return (0);
