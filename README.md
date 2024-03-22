@@ -104,6 +104,8 @@ make
 * gemartin99: https://github.com/gemartin99/Push-Swap-Tester
 ```
 cd Push-Swap-Tester
+mv push_swap_test_linux.sh ..
+cd ..
 bash push_swap_test_linux.sh
 ```
 * LeoFu9487: https://github.com/LeoFu9487/push_swap_tester
