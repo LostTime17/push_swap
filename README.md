@@ -1,4 +1,4 @@
-# Subject breakdown 📄
+# Subject simple breakdown 📄
 * You have 2 stacks named 'a' and 'b'.
 * Your program will receives input values [random amount of numbers (negative and/or positive) which cannot be duplicated].
 * Input example:
