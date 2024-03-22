@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:16:20 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 20:54:22 by root             ###   ########.fr       */
+/*   Updated: 2024/03/22 21:02:37 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	update_cheapest(t_stack_node *stack)
 	cheapest_value = LONG_MAX;
 	while (stack)
 	{
+		stack->cheapest = false;
 		if (stack->push_cost < cheapest_value)
 		{
 			cheapest_value = stack->push_cost;

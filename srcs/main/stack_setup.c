@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:35:58 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 20:54:29 by root             ###   ########.fr       */
+/*   Updated: 2024/03/22 23:33:32 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static long	ft_atol(const char *s)
 static void	append_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;
-	t_stack_node	*last_node;
+	t_stack_node	*last;
 
 	if (!stack)
 		return ;
@@ -54,9 +54,9 @@ static void	append_node(t_stack_node **stack, int n)
 	}
 	else
 	{
-		last_node = find_last_node(*stack);
-		last_node->next = node;
-		node->prev = last_node;
+		last = find_last_node(*stack);
+		last->next = node;
+		node->prev = last;
 	}
 }
 

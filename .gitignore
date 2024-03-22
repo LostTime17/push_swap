@@ -1,4 +1,6 @@
 a.out
 *.a
 *.o
+*.d
+push_swap
 push_swap_visualizer

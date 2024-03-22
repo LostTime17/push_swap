@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:47:08 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 20:54:26 by root             ###   ########.fr       */
+/*   Updated: 2024/03/22 22:09:51 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_syntax(char *str_n)
 {
 	if (!(ft_isdigit(*str_n) || *str_n == '+' || *str_n == '-'))
 		return (1);
-	if (!(ft_isdigit(*str_n)) && (*str_n == '+' || *str_n == '-'))
+	if (!(ft_isdigit(str_n[1])) && (*str_n == '+' || *str_n == '-'))
 		return (1);
 	while (*++str_n)
 	{
@@ -60,6 +60,6 @@ void	free_stack(t_stack_node **stack)
 void	free_errors(t_stack_node **a)
 {
 	free_stack(a);
-	ft_printf("Error\n");
+	write (2, "Error\n", 6);
 	exit(1);
 }

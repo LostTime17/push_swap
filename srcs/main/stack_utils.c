@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:55:41 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 20:54:30 by root             ###   ########.fr       */
+/*   Updated: 2024/03/22 23:42:00 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_stack_node	*find_last_node(t_stack_node *stack)
 bool	is_stack_sorted(t_stack_node *stack)
 {
 	if (!stack)
-		return (1);
+		return (true);
 	while (stack->next)
 	{
 		if (stack->nbr > stack->next->nbr)

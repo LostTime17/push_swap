@@ -1,14 +1,18 @@
+#---- Program Name ----#
 NAME =	push_swap
 
+#---- Complier, remove and compliation flags ----#
 CC =	gcc
 RM =	rm -rf
 CFLAGS =	-Wall -Wextra -Werror -I
 
+#---- Directory ----#
 LIBFT = libft/libft.a
 SRC_DIR =	srcs/
 INCLUDE_DIR =	includes/
 OBJ_DIR =	objs/
 
+#---- Source files ----#
 MAIN_DIR = $(SRC_DIR)main/main.c \
 					$(SRC_DIR)main/errors_handling.c \
 					$(SRC_DIR)main/stack_setup.c \
@@ -25,9 +29,11 @@ OPERATIONS_DIR = $(SRC_DIR)operations/push.c \
 					$(SRC_DIR)operations/rotate.c \
 					$(SRC_DIR)operations/swap.c \
 
+#---- Compilation target ----#
 SRCS = $(MAIN_DIR) $(ALGORITHM_DIR) $(OPERATIONS_DIR)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
+#---- Complie program ----#
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
@@ -41,6 +47,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) $(INCLUDE_DIR) -c $< -o $@
 
+#---- Remove objects / program / re-complie ----#
 clean:
 	@$(RM) $(OBJ_DIR)
 	@make clean -C ./libft
@@ -54,4 +61,5 @@ fclean: clean
 
 re: fclean all
 
+#---- Do not represent files ----#
 .PHONY: all clean fclean re
