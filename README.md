@@ -27,7 +27,7 @@ $>./
 # Algorithm 💻
 * Turk algorithm: https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 
-# Implementation
+# Implementation ✏️
 * Declare pointer to 2 Doubly linked list ```a``` and ```b``` then initialized both of it to NULL;
 * Input argument errors handler:
 ```
@@ -54,7 +54,7 @@ $>./
 ```
 * Don't forget to free everything at the end!!
 
-# Checker42
+# Checker42 🪪
 #### Use the checker program from 42-push_swap-project's page
 * Download and put it in the same directory of push_swap program
 * Do ```chmod +x``` on the checker program to give it an execute permission
@@ -78,7 +78,7 @@ OK
   2. Error must display on ```stderr``` with ```\n```
 * Run ```valgrind``` to see if there's any memleak
 
-# Visualizer
+# Visualizer 📊
 #### See how your program algorithm working step-by-step
 * o-reo: https://github.com/o-reo/push_swap_visualizer
 ```
