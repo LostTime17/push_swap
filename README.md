@@ -27,7 +27,21 @@ $>./
 # Algorithm 💻
 * Turk algorithm: https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 
+# Checker42
+#### Use the checker program from 42-push_swap-project
+* See how many step of instructions output by your program:
+```
+$>ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
+6
+```
+* See that your output instructions is correctly:
+```
+$>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
+OK
+```
+
 # Visualizer
+#### See how your program algorithm working step-by-step
 * o-reo: https://github.com/o-reo/push_swap_visualizer
 ```
 sudo apt-get update
