@@ -27,8 +27,36 @@ $>./
 # Algorithm 💻
 * Turk algorithm: https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 
+# Implementation
+* Declare pointer to 2 Doubly linked list ```a``` and ```b``` then initialized both of it to NULL;
+* Input argument errors handler:
+```
+// if there's no argument pass in
+// or there's 1 argument and it's empty
+// return (1);
+```
+* If input argument = 1, it's a string handle it with split_str() function and put it to argv[ ]
+* Initlize every argv[ ] into stack a
+```
+// check every argv[i] that it's in correct format of integers input
+// use ft_atol() to init the 'n' variable
+// check if 'n' is in the possible value of integer
+// check if 'n' is duplicate from the other node in stack a
+// create new node, assign 'n' value to it and append to the stack a
+    // if first node don't existed; then this node is the first node
+    // if there's already some node in stack a then find last node and append to it
+```
+* Check that if the stack a is already sorted
+```
+// if stack_len == 2; then swap top 2 node in stack a;
+// else if stack_len == 3; then called sort_three() function;
+// else stack_len > 3; then called sort_stack() function; (Turk algorithm)
+```
+* Don't forget to free everything at the end!!
+
 # Checker42
-#### Use the checker program from 42-push_swap-project
+#### Use the checker program from 42-push_swap-project's page
+* Download and put it in the same directory of push_swap program
 * See how many step of instructions output by your program:
 ```
 $>ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
@@ -39,6 +67,15 @@ $>ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
 $>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
 OK
 ```
+
+#### Error check
+* positive input: ```./push_swap 5 1 3 2 4```  ```./push_swap "5 1 3 2 4"```
+* negative input ```./push_swap -5 -1 -3 -2 -4```  ```./push_swap "-5 -1 -3 -2 -4"```
+* mixed pos/neg input: ```./push_swap -5 1 -3 2 -4```  ```./push_swap "-5 1 -3 2 -4"```
+* not a digit input: ```./push_swap 5 1 3 ab -4```  ```./push_swap "-5 1 ab 2 4"```
+  1. output must be "Error" followed by newline.
+  2. Error must display on ```stderr``` with ```\n```
+* Run ```valgrind``` to see if there's any memleak
 
 # Visualizer
 #### See how your program algorithm working step-by-step
