@@ -57,6 +57,7 @@ $>./
 # Checker42
 #### Use the checker program from 42-push_swap-project's page
 * Download and put it in the same directory of push_swap program
+* Do ```chmod +x``` on the checker program to give it an execute permission
 * See how many step of instructions output by your program:
 ```
 $>ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
