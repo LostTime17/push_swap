@@ -25,6 +25,14 @@ $>./
 * All you need to know about linked lists: https://youtu.be/mkZYMKwKkvI
 
 # Algorithm 💻
+* If stack_len(*a) > 3; Push top 2 nodes to stack b
+* Push the cheapest push_cost node from stack a to stack b until stack a have 3 nodes left
+    1. Find the best node from stack a to prepare for push to stack b
+* Sort 3 nodes lefted in stack a with functions sort_three()
+* Push the all sorted nodes from stack b back to stack a
+    1. Find the best node from stack a to prepare for push a top node from stack b to stack a
+* Update index and median flags of each nodes in stack a
+* Rotate stack a until the smallest node is on the top
 * Turk algorithm: https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 
 # Implementation ✏️
