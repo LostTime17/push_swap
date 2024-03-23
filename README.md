@@ -22,18 +22,26 @@ $>./
 * See more instructions in subject.pdf
 
 # Linked lists 📝
-* All you need to know about linked lists: https://youtu.be/mkZYMKwKkvI
+#### Doubly linked list data structure prototype
+```
+typedef struct s_struct
+{
+    int                data;    // Data store in node, of type int
+    struct s_struct   *next;    // Pointer to the next node in the list
+    struct s_struct   *prev;    // Pointer to the previous node in the list
+}              t_struct         // Struct name that will be use to declare this struct in program
 
-# Algorithm 💻
-* If stack_len(*a) > 3; Push top 2 nodes to stack b
-* Push the cheapest push_cost node from stack a to stack b until stack a have 3 nodes left
-    1. Find the best node from stack a to prepare for push to stack b
-* Sort 3 nodes lefted in stack a with functions sort_three()
-* Push the all sorted nodes from stack b back to stack a
-    1. Find the best node from stack a to prepare for push a top node from stack b to stack a
-* Update index and median flags of each nodes in stack a
-* Rotate stack a until the smallest node is on the top
-* Turk algorithm: https://medium.com/@ayogun/push-swap-c1f5d2d41e97
+==========================================================================
+
+     Node 1        Node 2         Node 3
++------------+ +------------+ +------------+
+| data: 5    | | data: 10   | | data: 15   |
+| next: ———> | | next: ———> | | next: NULL |
+| prev: NULL | | <——— :prev | | <——— :prev |
++------------+ +------------+ +------------+
+
+```
+* All you need to know about linked lists: https://youtu.be/mkZYMKwKkvI
 
 # Implementation ✏️
 * Declare pointer to 2 Doubly linked list ```a``` and ```b``` then initialized both of it to NULL;
@@ -61,6 +69,17 @@ $>./
 // else stack_len > 3; then called sort_stack() function; (Turk algorithm)
 ```
 * Don't forget to free everything at the end!!
+
+# Algorithm 💻
+* If stack_len(*a) > 3; Push top 2 nodes to stack b
+* Push the cheapest push_cost node from stack a to stack b until stack a have 3 nodes left
+    1. Find the best node from stack a to prepare for push to stack b
+* Sort 3 nodes lefted in stack a with functions sort_three()
+* Push the all sorted nodes from stack b back to stack a
+    1. Find the best node from stack a to prepare for push a top node from stack b to stack a
+* Update index and median flags of each nodes in stack a
+* Rotate stack a until the smallest node is on the top
+* Turk algorithm: https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 
 # Checker42 🪪
 #### Use the checker program from 42-push_swap-project's page
