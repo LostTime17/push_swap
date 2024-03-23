@@ -21,28 +21,6 @@ $>./
 ```
 * See more instructions in subject.pdf
 
-# Linked lists 📝
-#### Doubly linked list data structure prototype
-```
-typedef struct s_struct
-{
-    int                data;    // Data store in node, of type int
-    struct s_struct   *next;    // Pointer to the next node in the list
-    struct s_struct   *prev;    // Pointer to the previous node in the list
-}              t_struct         // Struct name that will be use to declare this struct in program
-
-==========================================================================
-
-     Node 1        Node 2         Node 3
-+------------+ +------------+ +------------+
-| data: 5    | | data: 10   | | data: 15   |
-| next: ———> | | next: ———> | | next: NULL |
-| prev: NULL | | <——— :prev | | <——— :prev |
-+------------+ +------------+ +------------+
-
-```
-* All you need to know about linked lists: https://youtu.be/mkZYMKwKkvI
-
 # Implementation ✏️
 * Declare pointer to 2 Doubly linked list ```a``` and ```b``` then initialized both of it to NULL;
 * Input argument errors handler:
@@ -69,6 +47,28 @@ typedef struct s_struct
 // else stack_len > 3; then called sort_stack() function; (Turk algorithm)
 ```
 * Don't forget to free everything at the end!!
+
+# Linked lists 📝
+#### Doubly linked list data structure prototype
+```
+typedef struct s_struct
+{
+    int                data;    // Data store in node, of type int
+    struct s_struct   *next;    // Pointer to the next node in the list
+    struct s_struct   *prev;    // Pointer to the previous node in the list
+}              t_struct         // Struct name that will be use to declare this struct in program
+
+==========================================================================
+
+     Node 1        Node 2         Node 3
++------------+ +------------+ +------------+
+| data: 5    | | data: 10   | | data: 15   |
+| next: ———> | | next: ———> | | next: NULL |
+| prev: NULL | | <——— :prev | | <——— :prev |
++------------+ +------------+ +------------+
+
+```
+* All you need to know about linked lists: https://youtu.be/mkZYMKwKkvI
 
 # Algorithm 💻
 * If stack_len(*a) > 3; Push top 2 nodes to stack b
