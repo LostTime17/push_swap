@@ -17,7 +17,7 @@ MAIN_DIR = $(SRC_DIR)main/main.c \
 					$(SRC_DIR)main/errors_handling.c \
 					$(SRC_DIR)main/stack_setup.c \
 					$(SRC_DIR)main/stack_utils.c \
-					$(SRC_DIR)main/string_split.c \
+					$(SRC_DIR)main/split_string.c \
 
 ALGORITHM_DIR = $(SRC_DIR)algorithm/a_node_setup.c \
 					$(SRC_DIR)algorithm/b_node_setup.c \

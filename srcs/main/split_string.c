@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string_split.c                                     :+:      :+:    :+:   */
+/*   split_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 17:13:37 by root              #+#    #+#             */
-/*   Updated: 2024/03/21 20:54:31 by root             ###   ########.fr       */
+/*   Updated: 2024/03/23 19:49:40 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static char	*get_next_word(char *s, char c)
 
 char	**split_str(char *s, char c)
 {
-	char	**result_array;
+	char	**result;
 	int		words_count;
 	int		i;
 
@@ -68,21 +68,21 @@ char	**split_str(char *s, char c)
 	words_count = count_words(s, c);
 	if (!words_count)
 		exit(1);
-	result_array = malloc(sizeof(char *) * (size_t)(words_count + 2));
-	if (!result_array)
+	result = malloc(sizeof(char *) * (size_t)(words_count + 2));
+	if (!result)
 		return (NULL);
 	while (words_count-- >= 0)
 	{
 		if (i == 0)
 		{
-			result_array[i] = malloc(sizeof(char));
-			if (!result_array[i])
+			result[i] = malloc(sizeof(char));
+			if (!result[i])
 				return (NULL);
-			result_array[i++][0] = '\0';
+			result[i++][0] = '\0';
 			continue ;
 		}
-		result_array[i++] = get_next_word(s, c);
+		result[i++] = get_next_word(s, c);
 	}
-	result_array[i] = NULL;
-	return (result_array);
+	result[i] = NULL;
+	return (result);
 }
