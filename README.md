@@ -104,6 +104,7 @@ OK
   1. output must be "Error" followed by newline.
   2. Error must display on ```stderr``` with ```\n```
 * Run ```valgrind``` to see if there's any memleak
+* Random Number Generator for manual check: https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
 
 # Visualizer 📊
 #### See how your program algorithm working step-by-step
