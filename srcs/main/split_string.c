@@ -64,14 +64,14 @@ char	**split_str(char *s, char c)
 	int		words_count;
 	int		i;
 
-	i = 0;
 	words_count = count_words(s, c);
 	if (!words_count)
 		exit(1);
 	result = malloc(sizeof(char *) * (size_t)(words_count + 2));
 	if (!result)
 		return (NULL);
-	while (words_count-- >= 0)
+	i = 0;
+	while (i <= words_count)
 	{
 		if (i == 0)
 		{

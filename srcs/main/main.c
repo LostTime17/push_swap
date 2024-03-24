@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-static void	free_split_argv(char **split_argv)
+void	free_split_argv(char **split_argv)
 {
 	int	i;
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 		return (1);
 	else if (argc == 2)
 		split_argv = split_str(argv[1], ' ');
-	init_stack(&a, split_argv + 1);
+	init_stack(&a, split_argv + 1, argc);
 	if (!is_stack_sorted(a))
 	{
 		if (stack_len(a) == 2)

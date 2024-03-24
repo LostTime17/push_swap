@@ -36,9 +36,10 @@ int					check_syntax(char *str_n);
 int					check_duplicate(t_stack_node *a, int n);
 void				free_stack(t_stack_node **stack);
 void				free_errors(t_stack_node **a);
+void				free_split_argv(char **split_argv);
 
 //Stack initialize
-void				init_stack(t_stack_node **a, char **argv);
+void				init_stack(t_stack_node **a, char **argv, int argc);
 char				**split_str(char *s, char c);
 
 //Nodes initialize

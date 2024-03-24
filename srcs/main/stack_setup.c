@@ -60,7 +60,7 @@ static void	append_node(t_stack_node **stack, int n)
 	}
 }
 
-void	init_stack(t_stack_node **a, char **argv)
+void	init_stack(t_stack_node **a, char **argv, int argc)
 {
 	long	n;
 	int		i;
@@ -69,7 +69,11 @@ void	init_stack(t_stack_node **a, char **argv)
 	while (argv[i])
 	{
 		if (check_syntax(argv[i]))
+		{
+			if (argc == 2)
+				free_split_argv(argv - 1);
 			free_errors(a);
+		}
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
